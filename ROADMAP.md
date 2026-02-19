@@ -43,6 +43,23 @@ Correlates Website Analyzer output with the existing test suite.
 - Maps features to tests
 - Produces a coverage percentage showing how much functionality has correlated tests
 
+### Project Customization Manager
+
+Each project has a lot of customizations. This skill is run upon fist use of these skills, in order to gather initial information about the project. It will scan the project directory, gathering information about the project. It will store information regarding the project in reference files, for use by the other skills, to help save on token usage and execution time. It can be run again on demand, when a user requests it, in order to gather the latest information after important code changes. 
+
+Information to store:
+- WDIO configuration(s)
+- Reporters
+- Services
+- Coding standards & conventions
+- Linting rules
+- NPM scripts related to running tests
+- Custom functionality (e.g. custom commands)
+- Relevant environment variables (e.g., DEBUG=true to trigger 'debug' mode)
+- Server information (e.g., local, dev, staging, prod)
+
+It will also be run, if needed, at the end of orchestrator sessions, to update the project with any information that was changed during that session. This will be triggered by the orchestrator. 
+
 ---
 
 ## Test Writing Skills
@@ -63,6 +80,10 @@ Creates a structured test plan from requirements.
 - Defines data requirements for each test
 - Generates test cases
 - Links test cases to specific feature tickets
+
+### Test Scaffolding
+
+Creates a scaffolded Mocha file 
 
 ### Plan Validator
 Verifies that written tests match the test plan.
