@@ -1,6 +1,6 @@
 ---
-name: context-gatherer
-description: Use when investigating a failing WebdriverIO test and you need to understand what the test was doing and where it broke. Reads test reports, logs, spec files, page objects, HTML snapshots, screenshots, and video artifacts to produce a structured failure context summary for the Investigator agent.
+name: gathering-context
+description: Use when investigating a failing WebdriverIO test and you need to understand what the test was doing and where it broke.
 ---
 
 # Context Gatherer

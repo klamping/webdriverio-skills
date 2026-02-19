@@ -4,10 +4,8 @@ Planned skills and utilities for the WebdriverIO Skills project.
 
 ## Generic Skills
 
-### WDIO Runner
+### WDIO Runner - DONE
 Runs WebdriverIO tests from the command line.
-
-- [ ] Add REPL interface support
 
 ### Test Writer
 Writes clean, well-structured test code.
@@ -76,12 +74,6 @@ Verifies that written tests match the test plan.
 
 ## Failing Test Triage Skills
 
-### Large Run Evaluator
-Processes large test run reports into an actionable failure list.
-
-- Parses test run output
-- Builds a structured list of failures for the Investigator
-
 ### Investigator
 The reasoning layer for diagnosing test failures.
 
@@ -91,12 +83,16 @@ The reasoning layer for diagnosing test failures.
 - Prompts the user for confirmation or additional context
 - Routes real app bugs to the Skipped Test Manager
 
-### Context Gatherer
-Reads artifacts to understand what a test was doing and where it broke.
+### Context Gatherer - DONE
+It reads artifacts to understand what a test was doing and where it broke.
 
 - Reads test reports and logs
 - Reads test files and related page objects
 - Identifies the test flow and the likely point of failure
+
+### REPL Runner
+
+Knows how to run commands from the REPL for use in investigation and debugging.
 
 ### Fixer
 Implements the solution determined by the Investigator.
@@ -111,3 +107,9 @@ Produces a human-readable summary of what failed and what was done.
 - Explains the root cause of the failure
 - Documents the fix applied
 - Improves long-term traceability of test history
+
+### Large Run Evaluator
+Processes large test run reports into an actionable failure list.
+
+- Parses test run output
+- Builds a structured list of failures for the Investigator

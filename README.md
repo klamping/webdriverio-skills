@@ -9,7 +9,9 @@ See [ROADMAP.md](./ROADMAP.md) for planned skills.
 | Skill | Description |
 |---|---|
 | `running-webdriverio-tests` | Run WebdriverIO test files from the command line. Use when debugging tests, gathering context about test behavior, or verifying changes resolved an issue. |
-| `context-gatherer` | Reads test artifacts to understand what a failing test was doing and where it broke. Part of the failing test triage pipeline — called by the Investigator agent. |
+| `gathering-context` | Reads test artifacts to understand what a failing test was doing and where it broke. Part of the failing test triage pipeline and called by the Investigator agent. |
+| `creating-test-structure` | Create or extend WebdriverIO test scaffolding from a markdown test plan using `describe` / `it` / hooks and pseudo-code comments. |
+| `writing-webdriverio-code` | Implement, extend, or fix WebdriverIO tests by converting pseudo-code scaffolds or editing existing specs with maintainable WDIO commands and assertions. |
 
 ## Installation
 
