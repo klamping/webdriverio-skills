@@ -35,6 +35,24 @@ It produces:
 - Target spec file path (new or existing).
 - Existing suite conventions (Mocha/Jasmine style, naming, hooks).
 
+## Project Context Files
+
+Before scaffolding, read project cache files when available:
+
+- `.webdriverio-skills/project-context.md`
+- `.webdriverio-skills/project-context.json`
+- `.webdriverio-skills/custom-rules.md`
+- `references/website-analysis/<target>/website-analysis.md`
+- `references/website-analysis/<target>/website-analysis.json`
+
+Use these files to align naming, hook usage, test organization, and team conventions.
+
+Use website analysis references to target high-impact routes/components and preserve section/sequence terminology in pseudo-code.
+
+Resolve `<target>` as lowercase site host (prefer user URL or project `baseUrl` host). If unknown, use `unknown-target`.
+
+If files are missing or stale, run `managing-project-customizations` first.
+
 ## Choose the Right Test Level
 
 - Prefer the lowest level that can prove behavior with confidence.
@@ -70,13 +88,14 @@ It produces:
 ## Workflow
 
 1. Parse plan sections and scenarios.
-2. Detect whether target file is new or existing.
-3. For existing files, locate the correct insertion point and preserve existing code.
-4. Map major sections to nested `describe` blocks.
-5. Place setup/teardown in the narrowest valid hooks.
-6. Create `it` blocks with sentence-style names.
-7. Add pseudo-code steps in execution order.
-8. Save scaffolded spec file with seamless formatting and style.
+2. Load project context and custom rules for style and structure constraints.
+3. Detect whether target file is new or existing.
+4. For existing files, locate the correct insertion point and preserve existing code.
+5. Map major sections to nested `describe` blocks.
+6. Place setup/teardown in the narrowest valid hooks.
+7. Create `it` blocks with sentence-style names.
+8. Add pseudo-code steps in execution order.
+9. Save scaffolded spec file with seamless formatting and style.
 
 ## Quick Reference
 

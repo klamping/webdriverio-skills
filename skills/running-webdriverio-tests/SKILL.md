@@ -13,11 +13,30 @@ npx wdio
 
 Config is in `wdio.conf.js` by default.
 
+## Project Context Files
+
+Before selecting run commands, read project cache files when available:
+
+- `.webdriverio-skills/project-context.md`
+- `.webdriverio-skills/project-context.json`
+- `.webdriverio-skills/custom-rules.md`
+- `references/website-analysis/<target>/website-analysis.md`
+
+Use these files to prefer project-approved scripts, configs, environment flags, and server targets.
+
+Use website analysis references to prioritize high-impact route/component test runs first.
+
+Resolve `<target>` as lowercase site host (prefer explicit URL or project `baseUrl` host), fallback `unknown-target`.
+
+If files are missing or stale, run `managing-project-customizations` first.
+
 ## Duration
 
 Tests take 20 seconds to 5 minutes. Do not treat a slow test as a failure.
 
 ## Selecting Tests to Run
+
+Prefer `package.json` scripts discovered in project context when they exist (e.g. `npm run test:e2e`, `npm run test:wdio:debug`) before using raw `npx wdio`.
 
 ### By spec file
 

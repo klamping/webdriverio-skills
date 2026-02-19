@@ -32,14 +32,35 @@ In both cases, it produces concrete WebdriverIO implementation that is stable, r
 - Existing page objects, fixtures, and helpers from the project.
 - Project conventions (linting, naming, assertion style).
 
+## Project Context Files
+
+Before implementation, read project cache files when available:
+
+- `.webdriverio-skills/project-context.md`
+- `.webdriverio-skills/project-context.json`
+- `.webdriverio-skills/custom-rules.md`
+- `.webdriverio-skills/health-recommendations.md`
+- `references/website-analysis/<target>/website-analysis.md`
+- `references/website-analysis/<target>/website-analysis.json`
+
+Use these as the default source for conventions, scripts, environment usage, and team overrides.
+
+Use website analysis references for route/component context, expected states, and auth-gated flow awareness.
+
+`<target>` should resolve to lowercase site host (prefer user URL or project `baseUrl` host).
+If unavailable, use `unknown-target` and proceed with other context sources.
+
+If files are missing or stale, run `managing-project-customizations` first.
+
 ## Conversion Workflow
 
 1. Identify whether the target is scaffold-conversion or direct test enhancement/fix.
-2. Implement comments in execution order when pseudo-code exists.
-3. Prefer existing page object methods before creating new ones.
-4. Use resilient selectors and explicit expectations.
-5. Remove pseudo-code comments once behavior is clear.
-6. Keep only comments that explain non-obvious intent.
+2. Load project context and custom rules, then apply them as hard constraints.
+3. Implement comments in execution order when pseudo-code exists.
+4. Prefer existing page object methods before creating new ones.
+5. Use resilient selectors and explicit expectations.
+6. Remove pseudo-code comments once behavior is clear.
+7. Keep only comments that explain non-obvious intent.
 
 ## Suite Startup State Hygiene
 

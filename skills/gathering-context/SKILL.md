@@ -20,11 +20,32 @@ The Investigator passes a structured failure object:
 - snapshotDir?: string    # Optional: dir where HTML/screenshots/video are saved
 ```
 
+## Project Context Files
+
+Before scanning from scratch, read project cache files when available:
+
+- `.webdriverio-skills/project-context.md`
+- `.webdriverio-skills/project-context.json`
+- `.webdriverio-skills/custom-rules.md`
+- `references/website-analysis/<target>/website-analysis.md`
+- `references/website-analysis/<target>/website-analysis.json`
+
+Use cached reporter, service, artifact, and environment details to narrow discovery work.
+
+If files are missing or stale, run `managing-project-customizations` first.
+
+### Target Resolution Rule
+
+When reading `references/website-analysis/<target>/...`, resolve `<target>` as:
+
+- lowercase site host from the test URL/baseUrl (e.g. `demo.learnwebdriverio.com`)
+- if host is unknown, use `unknown-target` and continue without blocking
+
 ## Workflow
 
 ### Step 1 — Locate Artifacts
 
-Read `wdio.conf.js` to resolve:
+Use cached context first, then read `wdio.conf.js` (or discovered WDIO config files) to resolve:
 
 - **Reporters** — which are configured (e.g. `allure`, `junit`, `spec`) and their output directories. Note artifact paths; do not parse report formats.
 - **Log paths** — where WDIO writes its log output.
@@ -49,6 +70,11 @@ Open `specFile` and:
 2. Identify all enclosing `describe()` blocks (tests can be nested — outer describe hooks apply)
 3. Identify all Mocha hooks in scope: `before`, `beforeEach`, `after`, `afterEach` at every nesting level — these run around the failing test and may be relevant
 4. Note all `import` / `require` statements — these reveal page object dependencies to traverse in Step 3
+
+If website analysis references exist, use them to quickly map the failing test to:
+- likely section/component ownership
+- expected critical states for the area
+- known auth-gated routes or dependencies
 
 **Mocha structure to understand:**
 - `describe()` blocks scope hooks and can be nested arbitrarily deep

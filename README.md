@@ -12,6 +12,10 @@ See [ROADMAP.md](./ROADMAP.md) for planned skills.
 | `gathering-context` | Reads test artifacts to understand what a failing test was doing and where it broke. Part of the failing test triage pipeline and called by the Investigator agent. |
 | `creating-test-structure` | Create or extend WebdriverIO test scaffolding from a markdown test plan using `describe` / `it` / hooks and pseudo-code comments. |
 | `writing-webdriverio-code` | Implement, extend, or fix WebdriverIO tests by converting pseudo-code scaffolds or editing existing specs with maintainable WDIO commands and assertions. |
+| `managing-project-customizations` | Initialize and refresh project-specific WebdriverIO context caches (configs, conventions, scripts, env targets, and recommendations) for faster downstream skill execution. |
+| `investigate-failing-tests` | Orchestrate failing test diagnosis and fix loops by delegating context gathering, test execution, and implementation to other skills with bounded retry guardrails. |
+| `skipped-test-manager` | Manage temporary `.skip` usage for app bugs or unimplemented functionality with metadata, ticket linkage, re-enable workflow, and aging reports. |
+| `analyze-website` | Investigate and document site structure, component inventory, functionality importance, and version-to-version differences for test planning and impact analysis. |
 
 ## Installation
 
